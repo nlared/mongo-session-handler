@@ -13,7 +13,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
     private $collection;
     private $logger;
 
-    public function __construct(Collection $collection, LoggerInterface $logger = null)
+    public function __construct(Collection $collection, LoggerInterface $logger = null): void
     {
         $this->collection = $collection;
 
@@ -24,17 +24,17 @@ class MongoSessionHandler implements \SessionHandlerInterface
         }
     }
 
-    public function open($_save_path, $_name)
+    public function open($_save_path, $_name): bool
     {
         return true;
     }
 
-    public function close()
+    public function close(): bool
     {
         return true;
     }
 
-    public function read($id)
+    public function read($id): string
     {
         $this->logger->debug("Reading session {$id}");
 
@@ -51,7 +51,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
         }
     }
 
-    public function write($id, $data)
+    public function write($id, $data): bool
     {
         $session = [
             '_id' => $id,
@@ -71,7 +71,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
         }
     }
 
-    public function destroy($id)
+    public function destroy($id): bool
     {
         $this->logger->debug("Destroying session {$id}");
 
@@ -86,7 +86,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
         }
     }
 
-    public function gc($maxlifetime)
+    public function gc($maxlifetime): int
     {
         $lastAccessed = new UTCDateTime(floor((microtime(true) - $maxlifetime) * 1000));
 
