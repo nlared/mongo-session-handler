@@ -1,5 +1,5 @@
 <?php
-namespace nlared;
+namespace Nlared;
 
 use MongoDB\Collection;
 use MongoDB\BSON\Binary;
