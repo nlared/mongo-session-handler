@@ -1,5 +1,5 @@
 {
-    "name": "altmetric/mongo-session-handler",
+    "name": "nlared/mongo-session-handler",
     "description": "A PHP session handler backed by MongoDB.",
     "homepage": "https://github.com/nlared/mongo-session-handler",
     "license": "MIT",
