@@ -1,5 +1,5 @@
 <?php
-namespace Altmetric;
+namespace nlared;
 
 use MongoDB\Collection;
 use MongoDB\BSON\Binary;
