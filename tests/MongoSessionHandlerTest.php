@@ -1,7 +1,7 @@
 <?php
-namespace Altmetric;
+namespace Nlared;
 
-use Altmetric\MongoSessionHandler;
+use Nlared\MongoSessionHandler;
 use MongoDB\BSON\Binary;
 use MongoDB\BSON\UTCDateTime;
 use Psr\Log\NullLogger;
