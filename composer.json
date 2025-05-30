@@ -1,7 +1,7 @@
 {
     "name": "altmetric/mongo-session-handler",
     "description": "A PHP session handler backed by MongoDB.",
-    "homepage": "https://github.com/altmetric/mongo-session-handler",
+    "homepage": "https://github.com/nlared/mongo-session-handler",
     "license": "MIT",
     "authors": [
         {
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">= 5.4.0",
+        "php": ">= 8.3.0",
         "ext-mongodb": "*",
         "psr/log": "^1.0",
         "mongodb/mongodb": "^1.0"
@@ -19,6 +19,6 @@
         "phpunit/phpunit": "^4.8"
     },
     "autoload": {
-        "psr-4": { "Altmetric\\": "src/" }
+        "psr-4": { "nlared\\": "src/" }
     }
 }
