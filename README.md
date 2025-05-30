@@ -6,22 +6,22 @@ mongo-session-handler is not maintained anymore.
 
 A PHP session handler backed by MongoDB.
 
-**Current version:** 2.1.0  
-**Supported PHP versions:** 5.4, 5.5, 5.6, 7
+**Current version:** 2.1.1  
+**Supported PHP versions:** 8
 
 _**Note:** This package depends on the [MongoDB PHP driver](http://php.net/manual/en/set.mongodb.php) extension (`mongodb`) and its companion [PHP library](https://docs.mongodb.com/php-library/master/). If you need to use the older, [legacy driver](http://php.net/manual/en/book.mongo.php) (`mongo`), please see [version 1.0](https://github.com/altmetric/mongo-session-handler/tree/1.x)._
 
 ## Installation
 
 ```shell
-$ composer require altmetric/mongo-session-handler:^2.1
+$ composer require nlared/mongo-session-handler:^2.1
 ```
 
 ## Usage
 
 ```php
 <?php
-use Altmetric\MongoSessionHandler;
+use Nlared\MongoSessionHandler;
 
 $sessions = $mongoClient->someDB->sessions;
 $handler = new MongoSessionHandler($sessions);
@@ -37,11 +37,11 @@ session_start();
 ### `public MongoSessionHandler::__construct(MongoDB\Collection $collection[, Psr\Log\LoggerInterface $logger])`
 
 ```php
-$handler = new \Altmetric\MongoSessionHandler($client->db->sessions);
+$handler = new \Nlared\MongoSessionHandler($client->db->sessions);
 session_set_save_handler($handler);
 session_start();
 
-$handler = new \Altmetric\MongoSessionHandler($client->db->sessions, $logger);
+$handler = new \Nlared\MongoSessionHandler($client->db->sessions, $logger);
 ```
 
 Instantiate a new MongoDB session handler with the following arguments:
