@@ -19,6 +19,6 @@
         "phpunit/phpunit": "^4.8"
     },
     "autoload": {
-        "psr-4": { "nlared\\": "src/" }
+        "psr-4": { "Nlared\\": "src/" }
     }
 }
