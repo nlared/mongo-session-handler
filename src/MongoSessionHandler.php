@@ -13,7 +13,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
     private $collection;
     private $logger;
 
-    public function __construct(Collection $collection, LoggerInterface $logger = null): void
+    public function __construct(Collection $collection, LoggerInterface $logger = null)
     {
         $this->collection = $collection;
 
@@ -56,7 +56,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
         $session = [
             '_id' => $id,
             'data' => new Binary($data, Binary::TYPE_OLD_BINARY),
-            'last_accessed' => new UTCDateTime(floor(microtime(true) * 1000))
+            'last_accessed' => new \MongoDB\BSON\UTCDateTime(time() * 1000)
         ];
 
         try {
