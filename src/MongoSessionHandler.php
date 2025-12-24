@@ -13,7 +13,7 @@ class MongoSessionHandler implements \SessionHandlerInterface
     private $collection;
     private $logger;
 
-    public function __construct(Collection $collection, LoggerInterface $logger = null)
+    public function __construct(Collection $collection, LoggerInterface|null $logger = null)
     {
         $this->collection = $collection;
 
